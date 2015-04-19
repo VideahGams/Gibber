@@ -16,4 +16,4 @@ GM.Website 		= "www.github.com/VideahGams"
 
 team.SetUp( 1, "Red", Color( 157, 48, 47, 255 ) ) 
 
-team.SetUp( 2, "Blue", Color( 56, 92, 120 , 225 ) ) 
+team.SetUp( 2, "Blue", Color( 56, 92, 120 , 255 ) ) 

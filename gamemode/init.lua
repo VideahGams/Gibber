@@ -1,5 +1,6 @@
 AddCSLuaFile( "cl_init.lua" ) --Tell the server that the client need to download cl_init.lua 
 AddCSLuaFile( "shared.lua" ) --Tell the server that the client need to download shared.lua 
+AddCSLuaFile( "cl_scoreboard.lua" )
 AddCSLuaFile( "vignette.lua" )
 
 --[[ Spawn Code ]]--

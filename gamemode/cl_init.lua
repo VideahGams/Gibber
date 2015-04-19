@@ -1,5 +1,6 @@
 include( "shared.lua" )
 include( "vignette.lua" )
+include( "cl_scoreboard.lua" )
 
 --[[ Global Variables ]]--
 

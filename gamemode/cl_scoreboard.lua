@@ -77,6 +77,7 @@ local PLAYER_LINE =
 
 		self.Avatar:SetPlayer( pl )
 		self.Name:SetText( pl:Nick() )
+		self.Team = self.Player:Team()
 
 		self:Think( self )
 
@@ -136,6 +137,10 @@ local PLAYER_LINE =
 		-- Careful though, it's a signed short internally, so needs to range between -32,768k and +32,767
 		--
 		self:SetZPos( (self.NumKills * -50) + self.NumDeaths )
+
+		if self.Team ~= self.Player:Team() then
+			self:Remove()
+		end
 
 	end,
 
@@ -279,10 +284,10 @@ local SCORE_BOARD =
 
 				if pl:Team() == 1 then
 
-				pl.ScoreEntry = vgui.CreateFromTable( PLAYER_LINE, pl.ScoreEntry )
-				pl.ScoreEntry:Setup( pl )
+					pl.ScoreEntry = vgui.CreateFromTable( PLAYER_LINE, pl.ScoreEntry )
+					pl.ScoreEntry:Setup( pl )
 
-				self.RedScores:AddItem( pl.ScoreEntry )
+					self.RedScores:AddItem( pl.ScoreEntry )
 
 				elseif pl:Team() == 2 then
 

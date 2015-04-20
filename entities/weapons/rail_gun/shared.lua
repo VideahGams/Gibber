@@ -84,9 +84,14 @@ function SWEP:PrimaryAttack()
 	--print(vAng)
 	for k, v in pairs(ents.FindInSphere(tr.HitPos, 70)) do
 		if v == self.Owner then
-			if tr.HitNormal == Vector(0,0,1) then
+
+			local x = tr.HitNormal.x
+			local y = tr.HitNormal.y
+			local z = tr.HitNormal.z
+
+			if x < 0.75 and x > -0.75 and y < 0.75 and y > -0.75 and z > -0.5 and z ~= 0 then
 				self.Owner:SetVelocity(self.Owner:GetAimVector()*-500)
-				print(tr.HitNormal)
+				print(self.Owner:Name() .. " has laser jumped at " .. math.floor(self.Owner:GetPos().x) .. " " .. math.floor(self.Owner:GetPos().y) .. " " .. math.floor(self.Owner:GetPos().z))
 			end
 		end
 	end	
